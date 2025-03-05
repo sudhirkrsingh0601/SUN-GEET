@@ -1,283 +1,176 @@
-/* Full-Screen Layout */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Main container covers the entire screen */
-  .container {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-  }
-  
-  /* Left Section (Song Selection) */
-  .left {
-    flex: 1;
-    background-color: #087A87;
-    background-size: cover;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  
-  /* Music Icon & Title */
-  .header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .music-icon {
-    width: 60px;
-    height: 60px;
-    background-color: #5ddcff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    margin-right: 10px;
-  }
-  
-  .title {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  /* Play Button */
-  .play-button {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  
-  .play-button:hover {
-    background-color: #333;
-  }
-  
-  /* Song Selection Grid */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 15px;
-    width: 100%;
-    max-width: 400px;
-    justify-content: center;
-  }
-  
-  
-  .grid-item {
-    width: 100px;
-    height: 100px;
-    background-color: lightgray;
-    border: 2px solid #5ddcff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .grid-item:hover {
-    background-color: #e0e0e0;
-  }
-  
-  /* Right Section (Music Player) */
-  .right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-  }
-  
-  /* Play/Pause Button */
-  .play-icon {
-    background-color: transparent;
-    border: 2px solid #5ddcff;
-    color: #5ddcff;
-    font-size: 20px;
-    padding: 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .play-icon:hover {
-    background-color: #5ddcff;
-    color: black;
-  }
-  
-  /* Progress Bar Section */
-  .progress-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
-    margin-top: 20px;
-    font-size: 14px;
-  }
-  
-  /* Progress Bar Styling */
-  .progress-bar {
-    width: 60%;
-    cursor: pointer;
-    appearance: none;
-    height: 5px;
-    background: #5ddcff;
-    border-radius: 5px;
-    outline: none;
-    transition: width 0.3s ease;
-  }
-  
-  
-  /* Progress Bar Thumb (Draggable Circle) */
-  .progress-bar::-webkit-slider-thumb {
-    appearance: none;
-    width: 12px;
-    height: 12px;
-    background: white;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
-  .progress-bar::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
-    background: white;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  .right {
-    flex: 1;
-    background: url("/images/image2.png") no-repeat center center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    padding: 20px;
-  }
-  .grid-item {
-    width: 100px;
-    height: 100px;
-    background-color: #333;
-    border: 2px solid #5ddcff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .grid-item:hover {
-    background-color: #5ddcff;
-    color: black;
-    box-shadow: 0 0 10px #5ddcff;
-  }
-  
-  /* Make sure the visualizer is above */
-  .visualizer {
-    width: 80%;
-    max-width: 600px;
-    height: 200px;
-    background: transparent;
-    border-radius: 10px;
-    pointer-events: none;
-  }
-  
-  /* Center Play Button Below Visualizer */
-  .player-controls {
-    margin-bottom: 15px; /* Space between play button and progress bar */
-  }
-  
-  /* Style Play Button */
-  .play-icon {
-    background-color: transparent;
-    border: 2px solid #5ddcff;
-    color: #5ddcff;
-    font-size: 24px;
-    padding: 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .play-icon:hover {
-    background-color: #5ddcff;
-    color: black;
-    transform: scale(1.1);
-  }
-  
-  /* Style Progress Bar */
-  .progress-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
-    max-width: 600px;
-    font-size: 14px;
-  }
-  
-  /* Progress Bar */
-  .progress-bar {
-    width: 60%;
-    cursor: pointer;
-    appearance: none;
-    height: 5px;
-    background: #5ddcff;
-    border-radius: 5px;
-    outline: none;
-    transition: width 0.3s ease;
-  }
-  
-  /* Progress Bar Thumb */
-  .progress-bar::-webkit-slider-thumb {
-    appearance: none;
-    width: 12px;
-    height: 12px;
-    background: white;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
-  .progress-bar::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
-    background: white;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
-  .progress-container {
-    position: absolute;
-    bottom: 50px; /* Adjust this value */
-    left: 75%;
-    transform: translateX(-50%);
-    width: 80%;
-  }
-  .player-controls {
-    display: flex;
-    justify-content: flex-end; /* Align to the right */
-    align-items: center;
-    width: 80%;
-    max-width: 70px;
-    margin-top: 50px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-  
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Left Section (Song Selection) */
+.left {
+  flex: 1;
+  background-color: #087A87;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.music-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #5ddcff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Song Selection Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  justify-content: center;
+}
+
+.grid-item {
+  width: 120px;
+  height: 120px;
+  background-color: #333;
+  border: 2px solid #5ddcff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.grid-item:hover {
+  background-color: #5ddcff;
+  color: black;
+  box-shadow: 0 0 15px #5ddcff;
+  transform: scale(1.05);
+}
+
+/* Right Section (Music Player) */
+.right {
+  flex: 1;
+  background: url("/images/image2.png") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 20px;
+}
+
+/* Play Button */
+.play-icon {
+  background-color: transparent;
+  border: 3px solid #5ddcff;
+  color: #5ddcff;
+  font-size: 30px;
+  padding: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.play-icon:hover {
+  background-color: #5ddcff;
+  color: black;
+  transform: scale(1.15);
+  box-shadow: 0 0 15px #5ddcff;
+}
+
+/* Progress Bar */
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 600px;
+  margin-top: 15px;
+}
+
+.progress-bar {
+  width: 65%;
+  appearance: none;
+  height: 8px;
+  background: #5ddcff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.progress-bar::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.visualizer {
+  width: 80%;
+  max-width: 600px;
+  height: 150px;
+  background: black;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+
+.progress-bar::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 8px #5ddcff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left, .right {
+    flex: none;
+    width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .progress-container {
+    width: 90%;
+  }
+}
